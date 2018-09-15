@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Restorani</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Website Font style -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Passion+One'
+	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Dodavanje novog restorana</h1>
+					<hr />
+				</div>
+			</div>
+			<div ng-controller="restaurantController"
+				class="main-login main-center">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Naziv</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="naziv" id="naziv" ng-model="restoran.naziv"
+									placeholder="Unesite naziv" />
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Adresa</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="adresa" id="adresa" ng-model="restoran.adresa"
+									placeholder="Unesite adresu" />
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="cols-sm-2 control-label">Kategorija</label>
+						<div class="cols-sm-10">
+							<select name="category" id="category"
+								ng-model="restoran.kategorija" class="form-control">
+								<option value="DOMACA">Domaci</option>
+								<option value="ROSTILJ">Rostilj</option>
+								<option value="KINESKI">Kineski</option>
+								<option value="INDIJSKI">Indijski</option>
+								<option value="POSLASTICARNICA">Poslasticarnica</option>
+								<option value="PICERIJA">Picerija</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<input type="submit" value="Dodaj restoran"
+							ng-click="addRestaurant(restoran)"
+							class="btn btn-primary btn-lg btn-block login-button" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

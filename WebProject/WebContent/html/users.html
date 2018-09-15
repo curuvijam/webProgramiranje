@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+
+			<div ng-controller="usersController" class="col-md-12">
+				<h4>Korisnici</h4>
+				<div class="table-responsive">
+
+					<table id="mytable" class="table table-bordred table-striped">
+
+						<thead>
+							<th>Korisnicko ime</th>
+							<th>Ime</th>
+							<th>Prezime</th>
+							<th>Uloga</th>
+							<th>Kontakt telefon</th>
+							<th>email</th>
+
+							<th>Promeni ulogu</th>
+						</thead>
+						<tbody ng-repeat="korisnik in korisnici">
+							<tr>
+								<td>{{korisnik.korisnickoIme}}</td>
+								<td>{{korisnik.ime}}</td>
+								<td>{{korisnik.prezime}}</td>
+								<td>{{korisnik.uloga}}</td>
+								<td>{{korisnik.kontaktTelefon}}</td>
+								<td>{{korisnik.email}}</td>
+								<td>
+									<p data-placement="top" title="Edit">
+										<button class="btn btn-primary btn-xs" ng-click="updateRedirect(korisnik.id)" data-title="Edit">
+											<span class="glyphicon glyphicon-pencil"></span>
+										</button>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

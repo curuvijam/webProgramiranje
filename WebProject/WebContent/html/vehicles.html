@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+
+			<div ng-controller="vehicleController" class="col-md-12">
+				<h4>Vozila</h4>
+				<div>
+					<a href="#/dodajVozilo" class="btn btn-primary">Dodaj novo vozilo</a>
+				</div>
+				<div class="table-responsive">
+
+					<table id="mytable" class="table table-bordred table-striped">
+
+						<thead>
+							<th>Marka</th>
+							<th>Model</th>
+							<th>Tip</th>
+							<th>Registarska oznaka</th>
+							<th>Godina proizvodnje</th>
+							<th>Napomena</th>
+
+							<th>Izmeni</th>
+							<th>Obrisi</th>
+						</thead>
+						<tbody ng-repeat="vozilo in vozila" ng-show="!vozilo.obrisan">
+							<tr>
+								<td>{{vozilo.marka}}</td>
+								<td>{{vozilo.model}}</td>
+								<td>{{vozilo.tip}}</td>
+								<td>{{vozilo.regOznaka}}</td>
+								<td>{{vozilo.godinaProizvodnje}}</td>
+								<td>{{vozilo.napomena}}</td>
+								<td>
+									<p data-placement="top" title="Edit">
+										<button class="btn btn-primary btn-xs" ng-click="updateRedirect(vozilo.id)" data-title="Edit">
+											<span class="glyphicon glyphicon-pencil"></span>
+										</button>
+									</p>
+								</td>
+								<td>
+									<p data-placement="top" title="Delete">
+										<button ng-click="deleteVehicle(vozilo.id)" class="btn btn-danger btn-xs" data-title="Delete">
+											<span class="glyphicon glyphicon-trash"></span>
+										</button>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

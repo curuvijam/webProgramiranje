@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Promena uloge korisnika</h1>
+                    <hr />
+                </div>
+            </div>
+            <div ng-controller="updateUserController" class="main-login main-center">
+                <h4>Korisnik: {{korisnik.korisnickoIme}}</h4>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="uloga" class="cols-sm-2 control-label">Tip</label>
+                        <div class="cols-sm-10">
+                            <select name="uloga" id="uloga" ng-model="korisnik.uloga" class="form-control">
+                                <option value="KUPAC">Kupac</option>
+                                <option value="DOSTAVLJAC">Dostavljac</option>
+                                <option value="ADMINISTRATOR">Administrator</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <input type="submit" value="Promeni ulogu" ng-click="changeRole(korisnik)" class="btn btn-primary btn-lg btn-block login-button"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

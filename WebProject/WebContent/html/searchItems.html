@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Website Font style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Pretraga artikala</h1>
+					<hr />
+				</div>
+			</div>
+			<div ng-controller="itemController" class="main-login main-center">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Naziv</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="naziv" id="naziv" ng-model="artikal.naziv"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Cena</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="cena" id="cena" ng-model="artikal.cena"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="tip" class="cols-sm-2 control-label">Tip</label>
+						<div class="cols-sm-10">
+							<select name="category" id="category" ng-model="artikal.tip" class="form-control">
+								<option value="JELO">Jelo</option>
+								<option value="PICE">Pice</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="restoran" class="cols-sm-2 control-label">Restoran</label>
+						<div class="cols-sm-10">
+							<select name="restoran" id="category" ng-model="artikal.restoranId" class="form-control">
+								<option ng-repeat="restoran in restorani" value="{{restoran.id}}">{{restoran.naziv}}</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<input type="submit" value="Pretrazi artikle" ng-click="searchItem(artikal.naziv, artikal.cena, artikal.tip, artikal.restoranId)" class="btn btn-primary btn-lg btn-block login-button"
+						/>
+					</div>
+                </form>
+                
+                <div class="col-md-12">
+                        <h4>Rezultati pretrage</h4>
+                        <div class="table-responsive">
+                            <table id="mytable" class="table table-bordred table-striped">
+        
+                                <thead>
+                                    <th>Naziv</th>
+                                    <th>Cena</th>
+                                    <th>Opis</th>
+                                    <th>Tip</th>
+                                    <th>Kolicina</th>
+                                </thead>
+                                <tbody ng-repeat="art in pretrazeni"  ng-show="!art.obrisan">
+                                    <tr>
+                                        <td>{{art.naziv}}</td>
+                                        <td>{{art.cena}}</td>
+                                        <td>{{art.opis}}</td>
+                                        <td>{{art.tip}}</td>
+                                        <td>{{art.kolicina}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

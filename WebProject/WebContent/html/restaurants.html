@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div ng-controller="restaurantController" class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<h4>Restorani</h4>
+				<div class="table-responsive">
+					<div>
+						<a href="#/dodajRestoran" class="btn btn-primary">Dodaj novi restoran</a>
+					</div>
+					<table id="mytable" class="table table-bordred table-striped">
+
+						<thead>
+							<th>Naziv</th>
+							<th>Adresa</th>
+							<th>Kategorija</th>
+							<th>Izmeni</th>
+
+							<th>Obrisi</th>
+						</thead>
+						<tbody ng-repeat="restoran in restorani" ng-show="!restoran.obrisan">
+							<tr>
+								<td>{{restoran.naziv}}</td>
+								<td>{{restoran.adresa}}</td>
+								<td>{{restoran.kategorija}}</td>
+								<td>
+									<p data-placement="top" title="Edit">
+										<button class="btn btn-primary btn-xs" ng-click="updateRedirect(restoran.id)" data-title="Edit">
+											<span class="glyphicon glyphicon-pencil"></span>
+										</button>
+									</p>
+								</td>
+								<td>
+									<p data-placement="top" title="Delete">
+										<button ng-click="deleteRestaurant(restoran.id)" class="btn btn-danger btn-xs" data-title="Delete">
+											<span class="glyphicon glyphicon-trash"></span>
+										</button>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

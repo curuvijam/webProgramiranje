@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Index.html</title>
+</head>
+
+<body>
+  <div ng-controller="indexController">
+    <nav class="navbar navbar-default">
+
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/home">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorije restorana <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/restoranKat/domaci">Domaci</a></li>
+                    <li><a href="#/restoranKat/rostilj">Rostilj</a></li>
+                    <li><a href="#/restoranKat/kineski">Kineski</a></li>
+                    <li><a href="#/restoranKat/indijski">Indijski</a></li>
+                    <li><a href="#/restoranKat/poslasticarnica">Poslasticarnica</a></li>
+                    <li><a href="#/restoranKat/picerija">Picerija</a></li>
+                  </ul>
+                </li>
+            <li ng-show="admin">
+              <a href="#/restorani">Restorani</a>
+            </li>
+            <li ng-show="admin">
+              <a href="#/artikli">Artikli</a>
+            </li>
+            <li ng-show="admin">
+              <a href="#/vozila">Vozila</a>
+            </li>
+            <li ng-show="admin">
+              <a href="#/korisnici">Korisnici</a>
+            </li>
+            <li>
+              <a href="#/pretragaRestorana">Pretraga restorana</a>
+            </li>
+            <li>
+              <a href="#/pretragaArtikala">Pretraga artikala</a>
+            </li>
+          </ul>
+          <ul ng-show="!ulogovan" class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#/prijava">Prijava</a>
+            </li>
+            <li>
+              <a href="#/registracija">Registracija</a>
+            </li>
+          </ul>
+          <ul ng-show="ulogovan" class="nav navbar-nav navbar-right">
+              <li>
+                <button ng-click="logOut()" class="btn btn-primary">Izloguj se</button>
+              </li>
+              <li>
+                <a href="#/profil">Profil</a>
+              </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+  <script src="angular/angular.js"></script>
+  <script src="angular/angular-route.js"></script>
+  <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+  <script src="angular/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="app/app.js"></script>
+  <script src="controller/controller.js"></script>
+  <script src="service/service.js"></script>
+</body>
+
+</html>

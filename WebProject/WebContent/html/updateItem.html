@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Website Font style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Izmena artikla</h1>
+					<hr />
+				</div>
+			</div>
+			<div ng-controller="updateItemController" class="main-login main-center">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Naziv</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="naziv" id="naziv" ng-model="artikal.naziv"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Cena</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="adresa" id="adresa" ng-model="artikal.cena"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="name" class="cols-sm-2 control-label">Opis</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="opis" id="opis" ng-model="artikal.opis"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="kolicina" class="cols-sm-2 control-label">Kolicina</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user fa" aria-hidden="true"></i>
+								</span>
+								<input type="text" class="form-control" name="kolicina" id="opis" ng-model="artikal.kolicina"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="tip" class="cols-sm-2 control-label">Tip</label>
+						<div class="cols-sm-10">
+							<select name="category" id="category" ng-model="artikal.tip" class="form-control">
+								<option value="JELO">Jelo</option>
+								<option value="PICE">Pice</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="restoran" class="cols-sm-2 control-label">Restoran</label>
+						<div class="cols-sm-10">
+							<select name="restoran" id="category" ng-model="artikal.restoranId" class="form-control">
+								<option ng-repeat="restoran in restorani" value="{{restoran.id}}">{{restoran.naziv}}</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<input type="submit" value="Izmeni artikal" ng-click="updateItem(artikal)" class="btn btn-primary btn-lg btn-block login-button"
+						/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

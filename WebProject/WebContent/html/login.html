@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Prijava</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Prijava</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center" ng-controller="loginController">
+					<form class="form-horizontal">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Korisnicko ime</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" ng-model="user.username" name="usern" id="user"  placeholder="Unesite korisnicko ime"/>
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Sifra</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" ng-model="user.password" name="pass" id="pass"  placeholder="Unesite sifru"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<input type="submit" ng-click="login(user.username, user.password)" class="btn btn-primary btn-lg btn-block login-button" value="Prijavi se"/>
+						</div>
+						<div class="login-register">
+				            <a href="#/registracija">Registracija</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

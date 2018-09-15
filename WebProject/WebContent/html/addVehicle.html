@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Website Font style -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Passion+One'
+	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oxygen'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Dodavanje novog vozila</h1>
+					<hr />
+				</div>
+			</div>
+			<div ng-controller="vehicleController"
+				class="main-login main-center">
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label for="marka" class="cols-sm-2 control-label">Marka</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="marka" id="marka" ng-model="vozilo.marka"
+									placeholder="Unesite marku" />
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="model" class="cols-sm-2 control-label">Model</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="model" id="model" ng-model="vozilo.model"
+									placeholder="Unesite model" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="regOznaka" class="cols-sm-2 control-label">Registarska oznaka</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="regOznaka" id="regOznaka" ng-model="vozilo.regOznaka"
+									placeholder="Unesite Registarsku oznaku" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="godina" class="cols-sm-2 control-label">Godina proizvodnje</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="godProizv" id="godProizv" ng-model="vozilo.godinaProizvodnje"
+									placeholder="Unesite Godinu proizvodnje" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="napomena" class="cols-sm-2 control-label">Napomena</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="napomena" id="napomena" ng-model="vozilo.napomena"
+									placeholder="Unesite Napomenu" />
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="cols-sm-2 control-label">Tip</label>
+						<div class="cols-sm-10">
+							<select name="category" id="category"
+								ng-model="vozilo.tip" class="form-control">
+								<option value="BICIKL">Bicikl</option>
+								<option value="SKUTER">Skuter</option>
+								<option value="AUTOMOBIL">Automobil</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<input type="submit" value="Dodaj Vozilo"
+							ng-click="addVehicle(vozilo)"
+							class="btn btn-primary btn-lg btn-block login-button" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
